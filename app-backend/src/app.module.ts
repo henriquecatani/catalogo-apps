@@ -4,6 +4,7 @@ import { ProfilesModule } from "./profiles/profiles.module";
 import { AuthModule } from "./auth/auth.module";
 import { ConfigModule } from "@nestjs/config";
 import { PrismaService } from "./database/prisma.service";
+import { DevelopersModule } from "./developers/developers.module";
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { PrismaService } from "./database/prisma.service";
     UsersModule,
     ProfilesModule,
     AuthModule,
+    DevelopersModule,
   ],
   controllers: [],
   providers: [PrismaService],
