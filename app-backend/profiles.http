@@ -1,0 +1,18 @@
+POST http://localhost:3000/api/profiles
+Content-Type: application/json
+
+{
+    "userId": 3,
+    "fullName": "Matus Roque",
+    "birthDate": "2007-01-02T00:00:00Z",
+    "avatarUrl": "https://s2-valor.glbimg.com/g15-iCR7opGAsSc2gXJ87i7WKiA=/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/E/b/MHG35ASMGYhl3jHOBbyg/foto19emp-101-mateus-b4.jpg"
+}
+###
+GET http://localhost:3000/api/profiles/1
+###
+PUT http://localhost:3000/api/profiles/1
+Content-Type: application/json
+
+{
+    "fullName": "Mateus Roque"
+}

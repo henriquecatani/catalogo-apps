@@ -1,0 +1,22 @@
+GET http://localhost:3000/api/users
+
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "name": "",
+    "email": ""
+}
+
+###
+PUT http://localhost:3000/api/users/3
+Content-Type: application/json
+
+{
+  "name": "Mateus",
+  "email": "mateus@linux.org"
+}
+
+###
+DELETE http://localhost:3000/api/users/2
