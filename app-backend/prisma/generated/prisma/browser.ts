@@ -28,7 +28,17 @@ export type User = Prisma.UserModel
  */
 export type Profile = Prisma.ProfileModel
 /**
- * Model Plan
+ * Model Developer
  * 
  */
-export type Plan = Prisma.PlanModel
+export type Developer = Prisma.DeveloperModel
+/**
+ * Model App
+ * 
+ */
+export type App = Prisma.AppModel
+/**
+ * Model Review
+ * 
+ */
+export type Review = Prisma.ReviewModel

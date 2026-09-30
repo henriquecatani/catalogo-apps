@@ -1,0 +1,101 @@
+### 1. Criar Desenvolvedor
+POST http://localhost:3000/api/developers
+Content-Type: application/json
+
+{
+  "name": "Mozilla",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Firefox_logo%2C_2019.svg"
+}
+
+### 2. Listar Desenvolvedores
+GET http://localhost:3000/api/developers
+
+### 3. Obter Desenvolvedor por ID
+GET http://localhost:3000/api/developers/1
+
+### 4. Atualizar Desenvolvedor
+PUT http://localhost:3000/api/developers/1
+Content-Type: application/json
+
+{
+  "name": "Mozilla Foundation"
+}
+
+### 5. Cadastrar Aplicativo
+POST http://localhost:3000/api/apps
+Content-Type: application/json
+
+{
+  "name": "Firefox Browser",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Firefox_logo%2C_2019.svg",
+  "link": "https://www.mozilla.org/firefox/",
+  "smallDescription": "Navegador web rápido, seguro e privado.",
+  "markdownDescription": "# Firefox\n\nO navegador que prioriza sua privacidade e rapidez de navegação na web.",
+  "developerId": 1
+}
+
+### 6. Listar Aplicativos
+GET http://localhost:3000/api/apps
+
+### 7. Buscar Aplicativo por texto ou por desenvolvedor
+GET http://localhost:3000/api/apps?search=Firefox
+###
+GET http://localhost:3000/api/apps?developerId=1
+
+### 8. Obter Aplicativo por ID (inclui desenvolvedor e avaliações)
+GET http://localhost:3000/api/apps/1
+
+### 9. Atualizar Aplicativo
+PUT http://localhost:3000/api/apps/1
+Content-Type: application/json
+
+{
+  "smallDescription": "Navegador web moderno focado em privacidade."
+}
+
+### 10. Criar Avaliação 1 para o Aplicativo (recalcula a nota do App)
+POST http://localhost:3000/api/apps/1/reviews
+Content-Type: application/json
+
+{
+  "name": "Carlos Silva",
+  "markdownText": "Excelente navegador, muito rápido!",
+  "rating": 5.0
+}
+
+### 11. Criar Avaliação 2 para o Aplicativo
+POST http://localhost:3000/api/apps/1/reviews
+Content-Type: application/json
+
+{
+  "name": "Ana Oliveira",
+  "markdownText": "Muito bom, mas consome um pouco de memória.",
+  "rating": 4.0
+}
+
+### 12. Listar Avaliações do Aplicativo
+GET http://localhost:3000/api/apps/1/reviews
+
+### 13. Verificar Nota Recalculada no Aplicativo (deve ser 4.5)
+GET http://localhost:3000/api/apps/1
+
+### 14. Obter Avaliação por ID
+GET http://localhost:3000/api/reviews/1
+
+### 15. Atualizar Avaliação (recalcula nota)
+PUT http://localhost:3000/api/reviews/1
+Content-Type: application/json
+
+{
+  "rating": 4.0,
+  "markdownText": "Atualizando: ótimo navegador no dia a dia!"
+}
+
+### 16. Deletar Avaliação (recalcula nota)
+DELETE http://localhost:3000/api/reviews/1
+
+### 17. Deletar Aplicativo
+DELETE http://localhost:3000/api/apps/1
+
+### 18. Deletar Desenvolvedor
+DELETE http://localhost:3000/api/developers/1

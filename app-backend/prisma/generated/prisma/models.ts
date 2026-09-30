@@ -10,5 +10,7 @@
  */
 export type * from './models/User.js'
 export type * from './models/Profile.js'
-export type * from './models/Plan.js'
+export type * from './models/Developer.js'
+export type * from './models/App.js'
+export type * from './models/Review.js'
 export type * from './commonInputTypes.js'
