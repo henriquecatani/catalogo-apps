@@ -1,6 +1,7 @@
 ### 1. Criar Desenvolvedor
 POST http://localhost:3000/api/developers
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoidXN1YXJpb0B1cGYuYnIiLCJuYW1lIjoidXN1YXJpbyIsImlhdCI6MTc5MDcyOTgwNiwiZXhwIjoxNzkwODE2MjA2fQ.FrczMoWVAao8C7q4QukW3cGvCAmhfqYz-eezX__bsRk
 
 {
   "name": "Mozilla",
@@ -9,13 +10,16 @@ Content-Type: application/json
 
 ### 2. Listar Desenvolvedores
 GET http://localhost:3000/api/developers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoidXN1YXJpb0B1cGYuYnIiLCJuYW1lIjoidXN1YXJpbyIsImlhdCI6MTc5MDcyOTgwNiwiZXhwIjoxNzkwODE2MjA2fQ.FrczMoWVAao8C7q4QukW3cGvCAmhfqYz-eezX__bsRk
 
 ### 3. Obter Desenvolvedor por ID
-GET http://localhost:3000/api/developers/1
+GET http://localhost:3000/api/developers/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoidXN1YXJpb0B1cGYuYnIiLCJuYW1lIjoidXN1YXJpbyIsImlhdCI6MTc5MDcyOTgwNiwiZXhwIjoxNzkwODE2MjA2fQ.FrczMoWVAao8C7q4QukW3cGvCAmhfqYz-eezX__bsRk
 
 ### 4. Atualizar Desenvolvedor
-PUT http://localhost:3000/api/developers/1
+PUT http://localhost:3000/api/developers/2
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoidXN1YXJpb0B1cGYuYnIiLCJuYW1lIjoidXN1YXJpbyIsImlhdCI6MTc5MDcyOTgwNiwiZXhwIjoxNzkwODE2MjA2fQ.FrczMoWVAao8C7q4QukW3cGvCAmhfqYz-eezX__bsRk
 
 {
   "name": "Mozilla Foundation"
@@ -24,6 +28,7 @@ Content-Type: application/json
 ### 5. Cadastrar Aplicativo
 POST http://localhost:3000/api/apps
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoidXN1YXJpb0B1cGYuYnIiLCJuYW1lIjoidXN1YXJpbyIsImlhdCI6MTc5MDcyOTgwNiwiZXhwIjoxNzkwODE2MjA2fQ.FrczMoWVAao8C7q4QukW3cGvCAmhfqYz-eezX__bsRk
 
 {
   "name": "Firefox Browser",
@@ -31,16 +36,33 @@ Content-Type: application/json
   "link": "https://www.mozilla.org/firefox/",
   "smallDescription": "Navegador web rápido, seguro e privado.",
   "markdownDescription": "# Firefox\n\nO navegador que prioriza sua privacidade e rapidez de navegação na web.",
-  "developerId": 1
+  "developerId": 2
+}
+
+###
+POST http://localhost:3000/api/apps
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoidXN1YXJpb0B1cGYuYnIiLCJuYW1lIjoidXN1YXJpbyIsImlhdCI6MTc5MDcyOTgwNiwiZXhwIjoxNzkwODE2MjA2fQ.FrczMoWVAao8C7q4QukW3cGvCAmhfqYz-eezX__bsRk
+
+{
+  "name": "Thunderbird Email",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Thunderbird_2023_icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "link": "https://thunderbird.net",
+  "smallDescription": "Cliente de email livre e de código aberto.",
+  "markdownDescription": "# Thunderbird\n\nAlternativa ao Outlook. Disponível para Windows, macOS, Linux e Android.  \nAlém do cliente de e-mail, o Thunderbird oferece calendário/agenda eletrônica, agenda de contatos, leitor RSS e outros recursos de gestão pessoal.",
+  "developerId": 2
 }
 
 ### 6. Listar Aplicativos
 GET http://localhost:3000/api/apps
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoidXN1YXJpb0B1cGYuYnIiLCJuYW1lIjoidXN1YXJpbyIsImlhdCI6MTc5MDcyOTgwNiwiZXhwIjoxNzkwODE2MjA2fQ.FrczMoWVAao8C7q4QukW3cGvCAmhfqYz-eezX__bsRk
 
 ### 7. Buscar Aplicativo por texto ou por desenvolvedor
 GET http://localhost:3000/api/apps?search=Firefox
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoidXN1YXJpb0B1cGYuYnIiLCJuYW1lIjoidXN1YXJpbyIsImlhdCI6MTc5MDcyOTgwNiwiZXhwIjoxNzkwODE2MjA2fQ.FrczMoWVAao8C7q4QukW3cGvCAmhfqYz-eezX__bsRk
 ###
-GET http://localhost:3000/api/apps?developerId=1
+GET http://localhost:3000/api/apps?developerId=2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoidXN1YXJpb0B1cGYuYnIiLCJuYW1lIjoidXN1YXJpbyIsImlhdCI6MTc5MDcyOTgwNiwiZXhwIjoxNzkwODE2MjA2fQ.FrczMoWVAao8C7q4QukW3cGvCAmhfqYz-eezX__bsRk
 
 ### 8. Obter Aplicativo por ID (inclui desenvolvedor e avaliações)
 GET http://localhost:3000/api/apps/1
@@ -58,7 +80,8 @@ POST http://localhost:3000/api/apps/1/reviews
 Content-Type: application/json
 
 {
-  "name": "Carlos Silva",
+  "userId": 3,
+  "name": "Mateus",
   "markdownText": "Excelente navegador, muito rápido!",
   "rating": 5.0
 }
@@ -68,7 +91,8 @@ POST http://localhost:3000/api/apps/1/reviews
 Content-Type: application/json
 
 {
-  "name": "Ana Oliveira",
+  "userId": 4,
+  "name": "usuario",
   "markdownText": "Muito bom, mas consome um pouco de memória.",
   "rating": 4.0
 }

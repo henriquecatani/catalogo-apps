@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from "@nestjs/common";
 import { PrismaService } from "../database/prisma.service";
 import { CreateReviewDto } from "../dtos/create-review-dto";
 import { UpdateReviewDto } from "../dtos/update-review-dto";
@@ -20,12 +24,35 @@ export class ReviewsService {
       throw new NotFoundException("Aplicativo não encontrado.");
     }
 
+    const user = await this.prisma.user.findUnique({
+      where: { id: dto.userId },
+    });
+
+    if (!user) {
+      throw new BadRequestException("Usuário informado não existe.");
+    }
+
     const review = await this.prisma.review.create({
       data: {
         appId,
-        name: dto.name,
+        userId: dto.userId,
+        name: dto.name?.trim() ? dto.name : user.name,
         markdownText: dto.markdownText,
         rating: dto.rating,
+      },
+      include: {
+        user: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+            profile: {
+              select: {
+                avatarUrl: true,
+              },
+            },
+          },
+        },
       },
     });
 
@@ -48,6 +75,20 @@ export class ReviewsService {
 
     return this.prisma.review.findMany({
       where: { appId },
+      include: {
+        user: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+            profile: {
+              select: {
+                avatarUrl: true,
+              },
+            },
+          },
+        },
+      },
       orderBy: { createdAt: "desc" },
     });
   }
@@ -61,6 +102,18 @@ export class ReviewsService {
             id: true,
             name: true,
             icon: true,
+          },
+        },
+        user: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+            profile: {
+              select: {
+                avatarUrl: true,
+              },
+            },
           },
         },
       },
@@ -82,6 +135,20 @@ export class ReviewsService {
         name: dto.name,
         markdownText: dto.markdownText,
         rating: dto.rating,
+      },
+      include: {
+        user: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+            profile: {
+              select: {
+                avatarUrl: true,
+              },
+            },
+          },
+        },
       },
     });
 

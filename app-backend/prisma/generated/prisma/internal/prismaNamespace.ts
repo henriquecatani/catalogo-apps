@@ -884,6 +884,7 @@ export const ReviewScalarFieldEnum = {
   markdownText: 'markdownText',
   rating: 'rating',
   appId: 'appId',
+  userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

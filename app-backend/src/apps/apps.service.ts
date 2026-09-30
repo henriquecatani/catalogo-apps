@@ -76,6 +76,20 @@ export class AppsService {
       include: {
         developer: true,
         reviews: {
+          include: {
+            user: {
+              select: {
+                id: true,
+                name: true,
+                email: true,
+                profile: {
+                  select: {
+                    avatarUrl: true,
+                  },
+                },
+              },
+            },
+          },
           orderBy: { createdAt: "desc" },
         },
       },
